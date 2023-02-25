@@ -15,10 +15,10 @@
   </description>
   <screenshots>
     <screenshot type="default">
-      <image type="source">https://pistegamez.net/PK2/SHOT10.gif</image>
+      <image type="source">https://raw.githubusercontent.com/flathub/net.pistegamez.PekkaKana2/screenshots/screenshots/screenshot1.jpg</image>
     </screenshot>
     <screenshot>
-      <image type="source">https://pistegamez.net/PK2/SHOT4.gif</image>
+      <image type="source">https://raw.githubusercontent.com/flathub/net.pistegamez.PekkaKana2/screenshots/screenshots/screenshot2.jpg</image>
     </screenshot>
   </screenshots>
   <url type="homepage">https://pistegamez.net/game_pk2.html</url>
