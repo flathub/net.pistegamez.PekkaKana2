@@ -3,7 +3,9 @@
   <id>net.pistegamez.PekkaKana2</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>BSD-2-Clause</project_license>
+  <launchable type="desktop-id">net.pistegamez.PekkaKana2.desktop</launchable>
   <name>Pekka Kana 2</name>
+  <developer_name>Piste Gamez</developer_name>
   <summary>Jump 'n run game made in the spirit of old classic platformers</summary>
   <description>
     <p>
@@ -15,10 +17,10 @@
   </description>
   <screenshots>
     <screenshot type="default">
-      <image type="source">https://raw.githubusercontent.com/flathub/net.pistegamez.PekkaKana2/master/screenshots/screenshot1.jpg</image>
+      <image>https://raw.githubusercontent.com/flathub/net.pistegamez.PekkaKana2/master/screenshots/screenshot1.jpg</image>
     </screenshot>
     <screenshot>
-      <image type="source">https://raw.githubusercontent.com/flathub/net.pistegamez.PekkaKana2/master/screenshots/screenshot2.jpg</image>
+      <image>https://raw.githubusercontent.com/flathub/net.pistegamez.PekkaKana2/master/screenshots/screenshot2.jpg</image>
     </screenshot>
   </screenshots>
   <url type="homepage">https://pistegamez.net/game_pk2.html</url>
