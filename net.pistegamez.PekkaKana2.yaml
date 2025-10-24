@@ -28,8 +28,8 @@ modules:
     buildsystem: simple
     build-options:
       env:
-        C_INCLUDE_PATH: /app/include/SDL2:/app/include:/usr/include/SDL2:/usr/include
-        CPLUS_INCLUDE_PATH: /app/include/SDL2:/app/include:/usr/include/SDL2:/usr/include
+        C_INCLUDE_PATH: /app/include/SDL2:/app/include:/usr/include/SDL2
+        CPLUS_INCLUDE_PATH: /app/include/SDL2:/app/include:/usr/include/SDL2
     build-commands:
       - make all
     sources:
