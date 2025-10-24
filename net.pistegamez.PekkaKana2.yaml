@@ -9,6 +9,10 @@ finish-args:
   - --socket=wayland
   - --socket=fallback-x11
   - --socket=pulseaudio
+cleanup:
+  - /include
+  - /lib/cmake
+  - /lib/pkgconfig
 modules:
   - shared-modules/SDL2/SDL2_image.json
   - shared-modules/lua5.4/lua-5.4.json
@@ -22,6 +26,10 @@ modules:
 
   - name: pekkakana2
     buildsystem: simple
+    build-options:
+      env:
+        C_INCLUDE_PATH: /app/include/SDL2:/app/include:/usr/include/SDL2:/usr/include
+        CPLUS_INCLUDE_PATH: /app/include/SDL2:/app/include:/usr/include/SDL2:/usr/include
     build-commands:
       - make all
     sources:
