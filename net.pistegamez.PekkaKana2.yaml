@@ -11,9 +11,12 @@ finish-args:
   - --socket=pulseaudio
 modules:
   - shared-modules/SDL2/SDL2_image.json
+  - shared-modules/lua5.4/lua-5.4.json
 
   - name: pekkakana2
-    no-autogen: true
+    buildsystem: simple
+    build-commands:
+      - make all
     sources:
       - type: archive
         url: https://github.com/SaturninTheAlien/pk2_greta/archive/refs/tags/1.5.0.tar.gz
