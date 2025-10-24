@@ -1,9 +1,9 @@
 [Desktop Entry]
 Name=Pekka Kana 2
-Comment=Jump 'n run game made in the spirit of old classic platformers
-Icon=net.pistegamez.PekkaKana2
-Exec=pekka-kana-2.sh
+Comment=2D Oldschool platform game where you control a rooster named Pekka
+Exec=/app/share/pekka-kana-2/pekka-kana-2
+Keywords=game;adventure;action;platforms;
 Terminal=false
 Type=Application
+Icon=net.pistegamez.PekkaKana2
 Categories=Game;AdventureGame;ActionGame;
-PrefersNonDefaultGPU=true
