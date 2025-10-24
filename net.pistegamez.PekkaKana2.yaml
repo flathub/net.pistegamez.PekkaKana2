@@ -13,6 +13,7 @@ modules:
   - shared-modules/SDL2/SDL2_image.json
 
   - name: pekkakana2
+  - no-autogen: true
     sources:
       - type: archive
         url: https://github.com/SaturninTheAlien/pk2_greta/archive/refs/tags/1.5.0.tar.gz
