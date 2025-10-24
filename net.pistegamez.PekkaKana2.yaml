@@ -14,13 +14,14 @@ finish-args:
 cleanup:
   - /man
   - /include
+  - /lib/cmake
+  - /lib/pkgconfig
   - /share/man
   - /doc
   - '*.a'
   - '*.la'
 modules:
-  - shared-modules/SDL/sdl12-compat.json
-  - shared-modules/SDL/SDL_image-1.2.12.json
+  - shared-modules/SDL2/SDL2_image.json
 
   - name: libmodplug
     sources:
@@ -33,15 +34,15 @@ modules:
       - --enable-music-mod-modplug=yes
     sources:
       - type: archive
-        url: https://github.com/libsdl-org/SDL_mixer/releases/download/release-2.6.2/SDL2_mixer-2.6.2.tar.gz
-        sha256: 8cdea810366decba3c33d32b8071bccd1c309b2499a54946d92b48e6922aa371
+        url: https://github.com/libsdl-org/SDL_mixer/releases/download/release-2.8.1/SDL2_mixer-2.8.1.tar.gz
+        sha256: cb760211b056bfe44f4a1e180cc7cb201137e4d1572f2002cc1be728efd22660
 
   - name: pekkakana2
     buildsystem: simple
     sources:
       - type: archive
-        url: http://deb.debian.org/debian/pool/main/p/pekka-kana-2/pekka-kana-2_1.2.7.orig.tar.bz2
-        sha256: 07485c72173e5a3a87f55e8a749bf77526dae57cb1b34c5aa2eb0e17f7bd6f7b
+        url: https://github.com/danilolc/pk2/archive/refs/tags/1.4.5.tar.gz
+        sha256: b78cbff3f9c75bcfd989b2b0f45d009bfea845a546d355da3dcb104045fd576a
       - type: file
         path: net.pistegamez.PekkaKana2.desktop
       - type: file
