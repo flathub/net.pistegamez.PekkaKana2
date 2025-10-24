@@ -14,6 +14,7 @@ modules:
   - shared-modules/lua5.4/lua-5.4.json
 
   - name: libzip
+    buildsystem: cmake-ninja
     sources:
       - type: archive
         url: https://libzip.org/download/libzip-1.11.4.tar.gz
