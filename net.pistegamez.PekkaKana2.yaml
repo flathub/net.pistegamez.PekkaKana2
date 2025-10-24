@@ -39,6 +39,10 @@ modules:
 
   - name: pekkakana2
     buildsystem: simple
+    build-options:
+      env:
+        C_INCLUDE_PATH: /app/include/SDL2:/app/include
+        CPLUS_INCLUDE_PATH: /app/include/SDL2:/app/include
     sources:
       - type: archive
         url: https://github.com/danilolc/pk2/archive/refs/tags/1.4.5.tar.gz
