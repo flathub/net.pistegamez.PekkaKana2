@@ -15,7 +15,7 @@ cleanup:
   - /lib/pkgconfig
 modules:
   - shared-modules/SDL2/SDL2_image.json
-  - shared-modules/lua5.3/lua-5.3.5.json
+  - shared-modules/lua5.1/lua-5.1.5.json
 
   - name: libzip
     buildsystem: cmake-ninja
