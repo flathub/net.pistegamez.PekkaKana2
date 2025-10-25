@@ -13,12 +13,14 @@ finish-args:
 modules:
   - shared-modules/SDL2/SDL2_image.json
 
-  - name: pekkakana2
-    no-autogen: true
+  - name: pekka-kana-2
+    buildsystem: simple
     build-options:
       env:
         C_INCLUDE_PATH: /app/include/SDL2:/usr/include/SDL2
         CPLUS_INCLUDE_PATH: /app/include/SDL2:/usr/include/SDL2
+    build-commands:
+      - make
     sources:
       - type: archive
         url: https://github.com/danilolc/pk2/archive/refs/tags/1.4.5.tar.gz
