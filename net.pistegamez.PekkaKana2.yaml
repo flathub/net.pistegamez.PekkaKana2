@@ -45,6 +45,7 @@ modules:
     post-install:
       - cp -a res /app/share/pekka-kana-2
       - install -Dm755 ./bin/pekka-kana-2 /app/share/pekka-kana-2/pekka-kana-2
+      - ln -s /app/share/pekka-kana-2/pekka-kana-2 /app/bin/pekka-kana-2
       - install -Dm644 net.pistegamez.PekkaKana2.desktop /app/share/applications/net.pistegamez.PekkaKana2.desktop
       - install -Dm644 net.pistegamez.PekkaKana2.png /app/share/icons/hicolor/128x128/apps/net.pistegamez.PekkaKana2.png
       - install -Dm644 net.pistegamez.PekkaKana2.metainfo.xml /app/share/metainfo/net.pistegamez.PekkaKana2.metainfo.xml
