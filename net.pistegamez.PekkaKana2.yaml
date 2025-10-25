@@ -9,6 +9,7 @@ finish-args:
   - --socket=wayland
   - --socket=fallback-x11
   - --socket=pulseaudio
+  - --persist=.pekka-kana-2
 cleanup:
   - /include
   - /lib/cmake
@@ -43,6 +44,7 @@ modules:
       - type: file
         path: net.pistegamez.PekkaKana2.metainfo.xml
     post-install:
+      - mkdir -p /app/share/pekka-kana-2
       - cp -a res /app/share/pekka-kana-2
       - install -Dm755 ./bin/pekka-kana-2 /app/share/pekka-kana-2/pekka-kana-2
       - ln -s /app/share/pekka-kana-2/pekka-kana-2 /app/bin/pekka-kana-2
