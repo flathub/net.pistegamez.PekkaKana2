@@ -10,29 +10,15 @@ finish-args:
   - --socket=fallback-x11
   - --socket=pulseaudio
   - --persist=.pekka-kana-2
-cleanup:
-  - /include
-  - /lib/cmake
-  - /lib/pkgconfig
 modules:
   - shared-modules/SDL2/SDL2_image.json
-  - shared-modules/lua5.4/lua-5.4.json
-
-  - name: libzip
-    buildsystem: cmake-ninja
-    sources:
-      - type: archive
-        url: https://libzip.org/download/libzip-1.11.4.tar.gz
-        sha256: 82e9f2f2421f9d7c2466bbc3173cd09595a88ea37db0d559a9d0a2dc60dc722e
 
   - name: pekkakana2
-    buildsystem: simple
+    no-autogen: true
     build-options:
       env:
-        C_INCLUDE_PATH: /app/include/SDL2:/app/include:/usr/include/SDL2
-        CPLUS_INCLUDE_PATH: /app/include/SDL2:/app/include:/usr/include/SDL2
-    build-commands:
-      - make
+        C_INCLUDE_PATH: /app/include/SDL2:/usr/include/SDL2
+        CPLUS_INCLUDE_PATH: /app/include/SDL2:/usr/include/SDL2
     sources:
       - type: archive
         url: https://github.com/danilolc/pk2/archive/refs/tags/1.4.5.tar.gz
