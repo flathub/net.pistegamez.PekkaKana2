@@ -19,8 +19,6 @@ modules:
       env:
         C_INCLUDE_PATH: /app/include/SDL2:/usr/include/SDL2
         CPLUS_INCLUDE_PATH: /app/include/SDL2:/usr/include/SDL2
-    build-commands:
-      - make
     sources:
       - type: archive
         url: https://github.com/danilolc/pk2/archive/refs/tags/1.4.5.tar.gz
@@ -31,10 +29,10 @@ modules:
         path: net.pistegamez.PekkaKana2.png
       - type: file
         path: net.pistegamez.PekkaKana2.metainfo.xml
-    post-install:
-      - mkdir -p /app/share/pekka-kana-2
-      - cp -a res /app/share/pekka-kana-2
+    build-commands:
+      - make
       - install -Dm755 ./bin/pekka-kana-2 /app/share/pekka-kana-2/pekka-kana-2
+      - cp -a res /app/share/pekka-kana-2
       - mkdir -p /app/bin
       - ln -s /app/share/pekka-kana-2/pekka-kana-2 /app/bin/pekka-kana-2
       - install -Dm644 net.pistegamez.PekkaKana2.desktop /app/share/applications/net.pistegamez.PekkaKana2.desktop
