@@ -1,0 +1,30 @@
+--- a/src/engine/PUtils.cpp
++++ b/src/engine/PUtils.cpp
+@@ -31,18 +31,8 @@
+ 	
+ 	#else
+ 
+-	int ret = 0;
+-	char* path = SDL_GetBasePath();
+-	
+-	if (path) {
+-		
+-		ret = chdir(path);
+-		SDL_free(path);
+-	
+-	}
+-
+-	return ret + chdir(".." PE_SEP "res");
+-
++	// in Flatpak, resources are located below  /app/share/games/pekka-kana-2/res
++	return chdir("/app/share/games/pekka-kana-2/res");
+ 	#endif
+ 
+ }
+@@ -218,4 +208,4 @@
+ }
+ #endif
+ 
+-}
+\ No newline at end of file
++}
