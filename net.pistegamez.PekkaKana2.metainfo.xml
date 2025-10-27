@@ -18,9 +18,11 @@
   <screenshots>
     <screenshot type="default">
       <image>https://raw.githubusercontent.com/flathub/net.pistegamez.PekkaKana2/master/screenshots/screenshot1.jpg</image>
+      <caption>Gameplay 1</caption>
     </screenshot>
     <screenshot>
       <image>https://raw.githubusercontent.com/flathub/net.pistegamez.PekkaKana2/master/screenshots/screenshot2.jpg</image>
+      <caption>Gameplay 2</caption>
     </screenshot>
   </screenshots>
   <url type="homepage">https://pistegamez.net/game_pk2.html</url>
