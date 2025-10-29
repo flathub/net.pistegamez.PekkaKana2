@@ -13,12 +13,26 @@ finish-args:
 modules:
   - shared-modules/SDL2/SDL2_image.json
 
+  - name: libmodplug
+    sources:
+      - type: archive
+        url: https://sourceforge.net/projects/modplug-xmms/files/libmodplug/0.8.9.0/libmodplug-0.8.9.0.tar.gz
+        sha256: 457ca5a6c179656d66c01505c0d95fafaead4329b9dbaa0f997d00a3508ad9de
+
+  - name: sdl_mixer
+    config-opts:
+      - --enable-music-mod-modplug=yes
+    sources:
+      - type: archive
+        url: https://github.com/libsdl-org/SDL_mixer/releases/download/release-2.8.1/SDL2_mixer-2.8.1.tar.gz
+        sha256: cb760211b056bfe44f4a1e180cc7cb201137e4d1572f2002cc1be728efd22660
+
   - name: pekkakana2
     buildsystem: simple
     build-options:
       env:
-        C_INCLUDE_PATH: /app/include/SDL2:/usr/include/SDL2
-        CPLUS_INCLUDE_PATH: /app/include/SDL2:/usr/include/SDL2
+        C_INCLUDE_PATH: /app/include/SDL2:/app/include:/usr/include/SDL2
+        CPLUS_INCLUDE_PATH: /app/include/SDL2:/app/include:/usr/include/SDL2
     sources:
       - type: archive
         url: https://github.com/danilolc/pk2/archive/refs/tags/1.4.5.tar.gz
@@ -31,6 +45,8 @@ modules:
         path: net.pistegamez.PekkaKana2.metainfo.xml
       - type: patch
         path: datapath.patch
+      - type: patch
+        path: dont-portable.patch
     build-commands:
       - make -j $FLATPAK_BUILDER_N_JOBS
       - install -Dm755 ./bin/pekka-kana-2 /app/bin/pekka-kana-2
