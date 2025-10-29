@@ -11,12 +11,9 @@ finish-args:
   - --socket=pulseaudio
   - --persist=.pekka-kana-2
 cleanup:
-  - /man
   - /include
   - /lib/cmake
   - /lib/pkgconfig
-  - /share/man
-  - /doc
   - '*.a'
   - '*.la'
 modules:
