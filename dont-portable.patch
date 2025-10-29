@@ -1,0 +1,31 @@
+Description: Don't turn on portable build
+ This changes storage of user data to the resource location, which is not
+ writable on Debian and not per-user.
+Author: Tobias Frost <tobi@debian.org>
+Forwarded: not-needed, Debian specific
+Reviewed-by: <name and email of a reviewer, optional>
+Last-Update: 2024-09-20 <YYYY-MM-DD, last update of the meta-information, optional>
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/Makefile
++++ b/Makefile
+@@ -29,7 +29,7 @@
+ #LDFLAGS += $(shell pkg-config libzip --libs)
+ 
+ # Portable (data is stored with resorces):
+-CXXFLAGS += -DPK2_PORTABLE
++#CXXFLAGS += -DPK2_PORTABLE
+ 
+ # Commit hash
+ #CXXFLAGS += -DCOMMIT_HASH='"$(shell git rev-parse --short HEAD)"'
+--- a/mingw/mingw.mk
++++ b/mingw/mingw.mk
+@@ -17,7 +17,7 @@
+ LDFLAGS += -lzip
+ 
+ # Portable (data is stored with resorces):
+-CXXFLAGS += -DPK2_PORTABLE
++#CXXFLAGS += -DPK2_PORTABLE
+ 
+ CXXFLAGS += -fno-exceptions -fno-rtti
+ 
