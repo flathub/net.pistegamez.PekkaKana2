@@ -1,25 +1,22 @@
-app-id: net.pistegamez.PekkaKana2
+id: net.pistegamez.PekkaKana2
 runtime: org.freedesktop.Platform
-runtime-version: 24.08
+runtime-version: 25.08
 sdk: org.freedesktop.Sdk
 command: pekka-kana-2.sh
 finish-args:
-  # Controller support
-  - --device=all
+  - --device=all # Controller support
   - --share=ipc
   - --socket=wayland
   - --socket=fallback-x11
   - --socket=pulseaudio
-  - --persist=.pekka-kana-2
-  - --filesystem=xdg-data/piste-gamez/pekka-kana-2:rw  #for better integration with the level editor
 cleanup:
-  - /man
   - /include
-  - /share/man
-  - /doc
-  - '*.a'
-  - '*.la'
+  - /lib/cmake
+  - /lib/pkgconfig
 modules:
+  - shared-modules/SDL2/SDL2_image.json
+  - shared-modules/lua5.4/lua-5.4.json
+
   - name: libmodplug
     sources:
       - type: archive
@@ -34,18 +31,8 @@ modules:
         url: https://github.com/libsdl-org/SDL_mixer/releases/download/release-2.8.1/SDL2_mixer-2.8.1.tar.gz
         sha256: cb760211b056bfe44f4a1e180cc7cb201137e4d1572f2002cc1be728efd22660
 
-  - shared-modules/lua5.4/lua-5.4.json
-
   - name: libzip
     buildsystem: cmake-ninja
-    config-opts:
-      - -DBUILD_SHARED_LIBS=ON
-      - -DENABLE_COMMONCRYPTO=OFF
-      - -DENABLE_GNUTLS=OFF
-      - -DENABLE_MBEDTLS=OFF
-      - -DENABLE_OPENSSL=OFF
-      - -DBUILD_TOOLS=OFF
-      - -DBUILD_REGRESS=OFF
     sources:
       - type: archive
         url: https://libzip.org/download/libzip-1.11.4.tar.gz
@@ -53,29 +40,30 @@ modules:
 
   - name: pekkakana2
     buildsystem: simple
+    build-options:
+      env:
+        C_INCLUDE_PATH: /app/include/SDL2:/app/include:/usr/include/SDL2
+        CPLUS_INCLUDE_PATH: /app/include/SDL2:/app/include:/usr/include/SDL2
+    build-commands:
+      - make -j$FLATPAK_BUILDER_N_JOBS
     sources:
       - type: archive
-        url: https://github.com/SaturninTheAlien/pk2_greta/archive/refs/tags/1.5.1.zip
-        sha256: 33bf0557b38632efaad93a75ab4e61bdce3532dedde69d46fa6c01130d6b70c1
+        url: https://github.com/SaturninTheAlien/pk2_greta/archive/refs/tags/1.5.2.zip
+        sha256: 560195cc4bc2c920c0b37356fd710d6cd9cb79df845fa94beecc5d20295a81b1
       - type: file
         path: net.pistegamez.PekkaKana2.desktop
       - type: file
         path: net.pistegamez.PekkaKana2.png
       - type: file
         path: net.pistegamez.PekkaKana2.metainfo.xml
-      - type: script
-        commands:
-          - exec /app/share/games/pekka-kana-2/pekka-kana-2 --assets-path /app/share/games/pekka-kana-2 --data-path PREF_PATH
-        dest-filename: pekka-kana-2.sh
-    build-commands:
-      - make -j $FLATPAK_BUILDER_N_JOBS
+      - type: file
+        path: net.pistegamez.PekkaKana2.wrapper.sh
+        
+    post-install:
       - mkdir -p /app/share/games/pekka-kana-2
-      - install -Dm755 pekka-kana-2.sh /app/bin/pekka-kana-2.sh
+      - install -Dm755 net.pistegamez.PekkaKana2.wrapper.sh  /app/bin/pekka-kana-2.sh
       - install -Dm755 bin/pekka-kana-2 /app/share/games/pekka-kana-2/pekka-kana-2
-      - |
-        for dir in episodes gfx language music sfx sprites; do
-          cp -r res/$dir /app/share/games/pekka-kana-2/$dir
-        done
+      - cp -a res /app/share/games/pekka-kana-2
       - install -Dm644 net.pistegamez.PekkaKana2.desktop /app/share/applications/net.pistegamez.PekkaKana2.desktop
       - install -Dm644 net.pistegamez.PekkaKana2.png /app/share/icons/hicolor/128x128/apps/net.pistegamez.PekkaKana2.png
       - install -Dm644 net.pistegamez.PekkaKana2.metainfo.xml /app/share/metainfo/net.pistegamez.PekkaKana2.metainfo.xml
