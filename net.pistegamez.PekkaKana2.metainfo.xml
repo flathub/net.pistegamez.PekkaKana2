@@ -24,8 +24,27 @@
     </screenshot>
   </screenshots>
   <url type="homepage">https://pistegamez.net/game_pk2.html</url>
+  <url type="vcs-browser">https://github.com/SaturninTheAlien/pk2_greta</url>
+  
   <releases>
-    <release version="1.5.2" date="2026-04-23"/>
+    <release version="1.5.2" date="2026-04-23">
+      <description>
+        <p>This release introduces major improvements since version 1.2.7.</p>
+        <ul>
+          <li>Improved general user experience (resizable window, more responsive GUI)</li>
+          <li>Improved joystick and controller support</li>
+          <li>Various bug fixes and stability improvements</li>
+          <li>Added support for 3rd-party episodes packed as .zip files</li>
+          <li>Introduced a new level format enabling more complex and customizable 3rd-party levels</li>
+          <li>Removed legacy filename limitations (e.g. 12-character limit)</li>
+          <li>Removed other legacy limits (e.g. 50 levels per episode, 600 sprites per level)</li>
+          <li>Improved modding support with a more flexible sprite system (compatible with 1.2.7 content) and new Lua scripting support</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.2.7" date="2020-09-20"/>
   </releases>
-  <content_rating type="oars-1.1"/>
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-cartoon">mild</content_attribute>
+  </content_rating>
 </component>
