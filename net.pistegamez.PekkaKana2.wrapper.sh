@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 DATA_OLD="$(dirname "$XDG_DATA_HOME")/.pekka-kana-2"
 echo $DATA_OLD
