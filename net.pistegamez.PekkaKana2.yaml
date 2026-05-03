@@ -21,6 +21,10 @@ modules:
   - shared-modules/SDL2/SDL2_image.json
   - shared-modules/lua5.4/lua-5.4.json
 
+    # NOTE: SDL2_mixer is rebuilt locally with libmodplug support to preserve XM module playback.
+    # The version provided by the Flathub runtime does not support XM music, so this duplication is intentional.
+    # This can be removed if the runtime SDL2_mixer gains XM support (e.g. via libmodplug or libxmp).
+
   - name: libmodplug
     sources:
       - type: archive
