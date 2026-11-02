@@ -26,6 +26,18 @@
   <url type="homepage">https://pistegamez.net/game_pk2.html</url>
   <url type="vcs-browser">https://github.com/SaturninTheAlien/pk2_greta</url>
   <releases>
+    <release version="1.5.3" date="2026-09-10">
+      <description>
+        <ul>
+          <li>Added new sprite AIs: AI_JUMP_ON_CLIFF (181) and AI_JUMP_IN_FRONT_OF_WALL (182).</li>
+          <li>Fixed checkpoint-related bugs when respawning in a different sector than the spawn point, including incorrect weather.</li>
+          <li>Fixed a bug causing some sprites to die twice.</li>
+          <li>Rebalanced checkpoints.</li>
+          <li>Added Hardcore Mode, configurable in the global config.txt.</li>
+          <li>Fixed the missing Game Over screen when dying as a jumping key due to a padlock block.</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.5.2" date="2026-04-23">
       <description>
         <p>This release introduces major improvements since version 1.2.7.</p>

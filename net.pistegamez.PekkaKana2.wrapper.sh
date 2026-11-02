@@ -39,4 +39,5 @@ fi
 
 exec /app/share/games/pekka-kana-2/pekka-kana-2 \
     --assets-path /app/share/games/pekka-kana-2 \
-    --data-path "$DATA_NEW"
+    --data-path "$DATA_NEW" \
+    "$@"
