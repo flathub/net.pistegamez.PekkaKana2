@@ -55,8 +55,8 @@ modules:
       - make -j$FLATPAK_BUILDER_N_JOBS
     sources:
       - type: archive
-        url: https://github.com/SaturninTheAlien/pk2_greta/archive/refs/tags/1.5.3.zip
-        sha256: 5a82ad4f4f3ed92c9fb97fd3f2ebd71c1499163ae3722e4e2c18880c2c9ff7e6
+        url: https://github.com/SaturninTheAlien/pk2_greta/archive/refs/tags/1.5.4.zip
+        sha256: c79a7d3d7e3ca0b7da4e843e8be6963346f51e8ece36ebffd892a7df030318a1
       - type: file
         path: net.pistegamez.PekkaKana2.desktop
       - type: file
