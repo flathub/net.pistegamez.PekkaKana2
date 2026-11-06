@@ -14,6 +14,10 @@
     <p>
       The simple goal in each level is to find the exit sign, which is usually not that simple as it sounds because of enemies, traps, and quirky puzzles.
     </p>
+    <p>
+      To install community-made episodes, place the ZIP files in
+      <code>~/.var/app/net.pistegamez.PekkaKana2/data/mapstore</code>.
+    </p>
   </description>
   <screenshots>
     <screenshot type="default">
@@ -26,6 +30,16 @@
   <url type="homepage">https://pistegamez.net/game_pk2.html</url>
   <url type="vcs-browser">https://github.com/SaturninTheAlien/pk2_greta</url>
   <releases>
+    <release version="1.5.4" date="2026-11-06">
+      <description>
+        <p>This release brings important stability improvements and bug fixes:</p>
+        <ul>
+          <li>Fixed a critical memory leak in sprite animation that could cause sudden crashes.</li>
+          <li>Resolved counting errors on the score screen.</li>
+          <li>Improved error handling when the --data-path directory is not writable, preventing silent crashes.</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.5.3" date="2026-09-10">
       <description>
         <ul>
