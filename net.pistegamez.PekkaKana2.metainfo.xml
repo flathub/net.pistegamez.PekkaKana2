@@ -31,11 +31,13 @@
   <url type="vcs-browser">https://github.com/SaturninTheAlien/pk2_greta</url>
   <releases>
     <release version="1.5.5" date="2026-11-21">
-      <ul>
-        <li>Fixed a bug that prevented sprites from pushing bonuses after respawning at a checkpoint</li>
-        <li>Improved game controller support</li>
-        <li>Fixed encoding errors involving non-ASCII UTF-8 characters</li>
-      </ul>
+      <description>
+        <ul>
+          <li>Fixed a bug that prevented sprites from pushing bonuses after respawning at a checkpoint</li>
+          <li>Improved game controller support</li>
+          <li>Fixed encoding errors involving non-ASCII UTF-8 characters</li>
+        </ul>
+      </description>
     </release>
     <release version="1.5.4" date="2026-11-06">
       <description>
